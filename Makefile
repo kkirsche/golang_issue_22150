@@ -1,10 +1,10 @@
-BINARY=cerberus
+BINARY=golang_issue_22150
 GOARCH=amd64
 HASH=$(shell git rev-parse HEAD)
 BUILDDATE=$(shell date -u '+%Y-%m-%dT%k:%M:%SZ')
 GOVERSION=$(shell go version | sed -e 's/ /|^|/g')
-VERSION=4.1.0
-LDFLAGS=-ldflags "-s -X ni.vzbi.com/stash/scm/ncsddos/$(BINARY)/cmd.BuildHash=$(HASH) -X ni.vzbi.com/stash/scm/ncsddos/$(BINARY)/cmd.BuildTime=$(BUILDDATE) -X ni.vzbi.com/stash/scm/ncsddos/$(BINARY)/cmd.BuildVersion=$(VERSION) -X ni.vzbi.com/stash/scm/ncsddos/$(BINARY)/cmd.BuildGoVersion=$(GOVERSION)"
+VERSION=1.0.0
+LDFLAGS=-ldflags "-s -X github.com/kkirsche/$(BINARY)/cmd.BuildHash=$(HASH) -X github.com/kkirsche/$(BINARY)/cmd.BuildTime=$(BUILDDATE) -X github.com/kkirsche/$(BINARY)/cmd.BuildVersion=$(VERSION) -X github.com/kkirsche/$(BINARY)/cmd.BuildGoVersion=$(GOVERSION)"
 
 lint:
 	golint ./...
