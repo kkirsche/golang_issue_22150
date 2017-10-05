@@ -46,6 +46,7 @@ var RootCmd = &cobra.Command{
 		rawConn, err := ipv4.NewRawConn(conn)
 		if err != nil {
 			logrus.WithError(err).Errorln("Send() Error: Raw connection creation")
+			return
 		}
 		rawConn.Close()
 	},
