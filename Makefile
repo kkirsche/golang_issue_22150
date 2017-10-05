@@ -22,25 +22,25 @@ binary-depends:
 	mkdir -p bin
 
 # Builds
-darwin-build: vet lint clean binary-depends
+darwin-build: vet lint binary-depends
 	env GOOS=darwin GOARCH=$(GOARCH) go build $(LDFLAGS) -v -o bin/$(BINARY).release.$(VERSION).$(GOARCH).darwin
 
-dragonfly-build: vet lint clean binary-depends
+dragonfly-build: vet lint binary-depends
 	env GOOS=dragonfly GOARCH=$(GOARCH) go build $(LDFLAGS) -v -o bin/$(BINARY).release.$(VERSION).$(GOARCH).dragonfly
 
-freebsd-build: vet lint clean binary-depends
+freebsd-build: vet lint binary-depends
 	env GOOS=freebsd GOARCH=$(GOARCH) go build $(LDFLAGS) -v -o bin/$(BINARY).release.$(VERSION).$(GOARCH).freebsd
 
-linux-build: vet lint clean binary-depends
+linux-build: vet lint binary-depends
 	env GOOS=linux GOARCH=$(GOARCH) go build $(LDFLAGS) -v -o bin/$(BINARY).release.$(VERSION).$(GOARCH).linux
 
-netbsd-build: vet lint clean binary-depends
+netbsd-build: vet lint binary-depends
 	env GOOS=netbsd GOARCH=$(GOARCH) go build $(LDFLAGS) -v -o bin/$(BINARY).release.$(VERSION).$(GOARCH).netbsd
 
-openbsd-build: vet lint clean binary-depends
+openbsd-build: vet lint binary-depends
 	env GOOS=openbsd GOARCH=$(GOARCH) go build $(LDFLAGS) -v -o bin/$(BINARY).release.$(VERSION).$(GOARCH).openbsd
 
-solaris-build: vet lint clean binary-depends
+solaris-build: vet lint binary-depends
 	env GOOS=solaris GOARCH=$(GOARCH) go build $(LDFLAGS) -v -o bin/$(BINARY).release.$(VERSION).$(GOARCH).solaris
 
 build: darwin-build dragonfly-build freebsd-build linux-build netbsd-build openbsd-build solaris-build

@@ -48,6 +48,7 @@ var RootCmd = &cobra.Command{
 			logrus.WithError(err).Errorln("Send() Error: Raw connection creation")
 			return
 		}
+		logrus.Println("Successfully created raw connection")
 		rawConn.Close()
 	},
 }
